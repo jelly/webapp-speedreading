@@ -53,40 +53,50 @@ Zarafa.plugins.speedreading.Speedreading = Ext.extend(Zarafa.core.Plugin, {
 	showSpeedReading : function(btn)
 	{
 		record = btn.record;
-
-		var myForm = new Ext.Window({
-			layout : 'form',
-			modal: true,
-			width: 300,
-			height: 200,
-			title: 'Speed readig',
-			items: [{
-				xtype: 'displayfield',
-				id: 'spray_result',
-				ref: 'speedreader',
-				displayField : '<div id="spray_result">&nbsp;</div>',
-				scope: this,
-			},{
-				xtype: 'button',
-				text:  _('Read'),
-				handler: function(button) {
-					var body = record.get('body');
-					var sprayReader = new SprayReader('#spray_result');
-					sprayReader.setWpm(200);
-					sprayReader.setInput(body);
-					sprayReader.start();
-				},
-				scope: this
-			}]
+		Zarafa.core.data.UIFactory.openLayerComponent(Zarafa.core.data.SharedComponentType['plugin.speedreading.dialog.speedreadingwindow'], btn, {
+			manager: Ext.WindowMgr,
+			record: record
 		});
-		myForm.show();
+	},
 
-		// Opemwindnmw
-		// Draw start/stop button
-		// setWPM
-		//
-		//var '<div id="spray_result">&nbsp;</div>';
+	/**
+	 * Bid for the type of shared component and the given record.
+	 * This will bid on plugin.speedreading.dialog.speedreadingwindow
+	 *
+	 * @param {Zarafa.core.data.SharedComponentType} type Type of component a context can bid for.
+	 * @param {Ext.data.Record} record Optionally passed record.
+	 * @return {Number} The bid for the shared component
+	 * @private
+	 */
+	bidSharedComponent: function (type, record) {
+		var bid = -1;
 
+		switch (type) {
+			case Zarafa.core.data.SharedComponentType['plugin.speedreading.dialog.speedreadingwindow']:
+				bid = 1;
+				break;
+		}
+		return bid;
+	},
+
+	/**
+	 * Will return the reference to the shared component that is requested
+	 *
+	 * @param {Zarafa.core.data.SharedComponentType} type Type of component a context can bid for.
+	 * @param {Ext.data.Record} record Optionally passed record.
+	 * @return {Ext.Component} Component
+	 * @private
+	 */
+	getSharedComponent: function (type, record) {
+		var component;
+
+		switch (type) {
+			case Zarafa.core.data.SharedComponentType['plugin.speedreading.dialog.speedreadingwindow']:
+				component = Zarafa.plugins.speedreading.dialogs.SpeedReadingContentPanel;
+				break;
+		}
+
+		return component;
 	}
 });
 

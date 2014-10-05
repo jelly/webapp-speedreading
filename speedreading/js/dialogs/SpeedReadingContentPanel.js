@@ -14,14 +14,17 @@ Zarafa.plugins.speedreading.dialogs.SpeedReadingContentPanel = Ext.extend(Zarafa
 	record : undefined,
 
 	/**
+	 * cfg {Object} sprayReader object
+	 */
+	sprayReader: undefined,
+
+	/**
 	 * @constructor
 	 * @param config Configuration structure
 	 */
 	constructor : function(config) {
 		config = config || {};
-
-		this.record = config.record;
-
+//
 		Ext.applyIf(config, {
 			layout : 'form',
 			modal: true,
@@ -29,22 +32,37 @@ Zarafa.plugins.speedreading.dialogs.SpeedReadingContentPanel = Ext.extend(Zarafa
 			height: 300,
 			title : _('Speed Reading Window'),
 			xtype: 'speedreading.speedreadingwindow',
+			// TODO: implement real speedreading field
 			items: [{
 				xtype: 'displayfield',
 				id: 'spray_result',
 				ref: 'speedreader',
 				displayField : '<div id="spray_result">&nbsp;</div>',
 				scope: this,
+			 	style: {
+			          'font-size' : '32px!important'
+			        },
+				labelStyle: {
+				  'font-size' : '32px!important'
+				}
+			},{
+				xtype: 'combo',
+				name: 'Words per minute',
+				ref: 'wpm',
+				store: [100, 200, 300, 400, 500],
+				//lazyInit: false,
+				//autoSelect : true,
+				//forceSelection: true,
+				editable: false
 			},{
 				xtype: 'button',
-				text:  _('Read'),
-				handler: function(button) {
-					var body = record.get('body');
-					var sprayReader = new SprayReader('#spray_result');
-					sprayReader.setWpm(200);
-					sprayReader.setInput(body);
-					sprayReader.start();
-				},
+				text:  _('Start'),
+				handler: this.startSpeedReading,
+				scope: this
+			},{
+				xtype: 'button',
+				text:  _('Stop'),
+				handler: this.stopSpeedReading,
 				scope: this
 			}]
 		});
@@ -52,18 +70,23 @@ Zarafa.plugins.speedreading.dialogs.SpeedReadingContentPanel = Ext.extend(Zarafa
 	},
 
 	/**
-	 * initialize component
-	 * @protected
-	 */
-	initComponent: function () {
-		Zarafa.plugins.speedreading.dialogs.SpeedReadingContentPanel.superclass.initComponent.call(this);
-	}
-	
-	/**
 	 *
-	 * @param {Ext.button} button submit button of the form
+	 * @param {Ext.button} button to start the sprayReader
 	 */
 	startSpeedReading : function(button) {
+		var body = record.get('body');
+		this.sprayReader = new SprayReader('#spray_result');
+		this.sprayReader.setWpm(this.wpm.getValue());
+		this.sprayReader.setInput(body);
+		this.sprayReader.start();
+	},
+
+	/**
+	 *
+	 * @param {Ext.button} button to start the sprayReader
+	 */
+	stopSpeedReading : function(button) {
+		this.sprayReader.stop();
 	}
 });
 
