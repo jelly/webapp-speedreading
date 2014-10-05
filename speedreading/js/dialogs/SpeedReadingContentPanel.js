@@ -32,13 +32,13 @@ Zarafa.plugins.speedreading.dialogs.SpeedReadingContentPanel = Ext.extend(Zarafa
 			height: 200,
 			title : _('Speed Reading Window'),
 			xtype: 'speedreading.speedreadingwindow',
-			// TODO: implement real speedreading field, with bigger font and line
 			items: [{
 				xtype: 'box',
 				autoEl : {
 				html: '<div id="spray_container"><div id="guide_top">――――――――――<span id="notch">ф</span>―――――――――――</div><div id="spray_result">&nbsp;</div><div id="guide_bottom">――――――――――――――――――――――</div></div>',
 				}
 			},{
+				// TODO: fix initial selection
 				xtype: 'combo',
 				name: 'Words per minute',
 				ref: 'wpm',
