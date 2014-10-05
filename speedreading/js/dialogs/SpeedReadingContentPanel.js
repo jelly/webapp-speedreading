@@ -32,7 +32,7 @@ Zarafa.plugins.speedreading.dialogs.SpeedReadingContentPanel = Ext.extend(Zarafa
 			height: 300,
 			title : _('Speed Reading Window'),
 			xtype: 'speedreading.speedreadingwindow',
-			// TODO: implement real speedreading field
+			// TODO: implement real speedreading field, with bigger font and line
 			items: [{
 				xtype: 'displayfield',
 				id: 'spray_result',
@@ -46,13 +46,13 @@ Zarafa.plugins.speedreading.dialogs.SpeedReadingContentPanel = Ext.extend(Zarafa
 				  'font-size' : '32px!important'
 				}
 			},{
+				// FIXME: make selectable
 				xtype: 'combo',
 				name: 'Words per minute',
 				ref: 'wpm',
 				store: [100, 200, 300, 400, 500],
-				//lazyInit: false,
-				//autoSelect : true,
-				//forceSelection: true,
+				autoSelect: true,
+				triggerAction: 'all',
 				editable: false
 			},{
 				xtype: 'button',
