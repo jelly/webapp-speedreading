@@ -1,6 +1,7 @@
 Ext.namespace('Zarafa.plugins.speedreading');
 
 /**
+ * Speed-reading plugin which speed reads emails in the WebApp
  *
  * @class Zarafa.plugins.speedreading.Speedreading
  * @extends Zarafa.core.Plugin
@@ -27,6 +28,7 @@ Zarafa.plugins.speedreading.Speedreading = Ext.extend(Zarafa.core.Plugin, {
 	},
 
 	/**
+	 * Button in the previewpanel
 	 *
 	 * @return {Ext.Button} Button instance
 	 */
@@ -47,6 +49,7 @@ Zarafa.plugins.speedreading.Speedreading = Ext.extend(Zarafa.core.Plugin, {
 	},
 
 	/**
+	 * Click handler for speed-reading button, opens speed-reading window
 	 *
 	 * @param {Ext.Button} btn The button which was clicked
 	 */

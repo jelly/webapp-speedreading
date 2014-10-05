@@ -37,7 +37,7 @@
 					<clientfile load="source">js/dialogs/SpeedReadingContentPanel.js</clientfile>
 	 			</client>
                                 <resources>                                                                                                                                                                                                                                                                                                          
-                                        <resourcefile load="release">resources/css/spray-style.css</resourcefile>                                                                                                                                                                                                                                          
+					<resourcefile load="release">resources/css/spray-style.css</resourcefile> 
                                         <resourcefile load="source">resources/css/spray-style.css</resourcefile>                                                                                                                                                                                                                                    
                                 </resources>                                                                                                                                                                                                                                                                                                         
 			</files>

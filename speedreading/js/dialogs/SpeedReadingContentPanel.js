@@ -24,7 +24,7 @@ Zarafa.plugins.speedreading.dialogs.SpeedReadingContentPanel = Ext.extend(Zarafa
 	 */
 	constructor : function(config) {
 		config = config || {};
-//
+
 		Ext.applyIf(config, {
 			layout : 'form',
 			modal: true,
@@ -64,8 +64,9 @@ Zarafa.plugins.speedreading.dialogs.SpeedReadingContentPanel = Ext.extend(Zarafa
 	},
 
 	/**
+	 * Button which starts the spray-reader
 	 *
-	 * @param {Ext.button} button to start the sprayReader
+	 * @param {Ext.button} button to start the spray-reader
 	 */
 	startSpeedReading : function(button) {
 		var body = record.get('body');
@@ -76,8 +77,9 @@ Zarafa.plugins.speedreading.dialogs.SpeedReadingContentPanel = Ext.extend(Zarafa
 	},
 
 	/**
+	 * Button which stops the spray-reader
 	 *
-	 * @param {Ext.button} button to stop the sprayReader
+	 * @param {Ext.button} button to stop the spray-reader
 	 */
 	stopSpeedReading : function(button) {
 		this.sprayReader.stop();
