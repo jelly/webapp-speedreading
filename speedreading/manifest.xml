@@ -34,6 +34,7 @@
 					<clientfile load="release">js/speedreading.js</clientfile>
 					<clientfile load="debug">js/speedreading-debug.js</clientfile>
 					<clientfile load="source">js/speedreading.js</clientfile>
+					<clientfile load="source">js/dialogs/SpeedReadingContentPanel.js</clientfile>
 				</client>
 			</files>
 		</component>
