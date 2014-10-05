@@ -21,6 +21,8 @@ Zarafa.plugins.speedreading.Speedreading = Ext.extend(Zarafa.core.Plugin, {
 	{
 		this.registerInsertionPoint('previewpanel.toolbar.right', this.showSpeedReadingFromPreviewButton, this);
 
+		Zarafa.core.data.SharedComponentType.addProperty('plugin.speedreading.dialog.speedreadingwindow');
+
 		Zarafa.plugins.speedreading.Speedreading.superclass.initPlugin.apply(this, arguments);
 	},
 

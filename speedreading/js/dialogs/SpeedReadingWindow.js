@@ -1,13 +1,13 @@
-Ext.namespace('Zarafa.plugins.squirt.dialogs');
+Ext.namespace('Zarafa.plugins.speedreading.dialogs');
 
 /**
- * @class Zarafa.plugins.squirt.dialogs.SpeedReadingWindow
+ * @class Zarafa.plugins.speedreading.dialogs.SpeedReadingContentPanel
  * @extends Zarafa.core.ui.ContentPanel
  *
  * The content panel which asks the user for his passphrase and verifies if it's correct.
  * @xtype smime.passphrasewindow
  */
-Zarafa.plugins.squirt.dialogs.SpeedReadingWindow = Ext.extend(Zarafa.core.ui.ContentPanel, {
+Zarafa.plugins.speedreading.dialogs.SpeedReadingContentPanel = Ext.extend(Zarafa.core.ui.ContentPanel, {
 	/**
 	 * cfg {Ext.Record} record the email record
 	 */
@@ -28,7 +28,7 @@ Zarafa.plugins.squirt.dialogs.SpeedReadingWindow = Ext.extend(Zarafa.core.ui.Con
 			width: 300,
 			height: 300,
 			title : _('Speed Reading Window'),
-			xtype: 'squirt.speedreadingwindow',
+			xtype: 'speedreading.speedreadingwindow',
 			items: [{
 				xtype: 'displayfield',
 				id: 'spray_result',
@@ -48,8 +48,16 @@ Zarafa.plugins.squirt.dialogs.SpeedReadingWindow = Ext.extend(Zarafa.core.ui.Con
 				scope: this
 			}]
 		});
-		Zarafa.plugins.squirt.dialogs.SpeedReadingWindow.superclass.constructor.call(this, config);
+		Zarafa.plugins.speedreading.dialogs.SpeedReadingContentPanel.superclass.constructor.call(this, config);
 	},
+
+	/**
+	 * initialize component
+	 * @protected
+	 */
+	initComponent: function () {
+		Zarafa.plugins.speedreading.dialogs.SpeedReadingContentPanel.superclass.initComponent.call(this);
+	}
 	
 	/**
 	 *
@@ -59,3 +67,4 @@ Zarafa.plugins.squirt.dialogs.SpeedReadingWindow = Ext.extend(Zarafa.core.ui.Con
 	}
 });
 
+Ext.reg('speedreading.window', Zarafa.plugins.speedreading.dialogs.SpeedReadingContentPanel);
