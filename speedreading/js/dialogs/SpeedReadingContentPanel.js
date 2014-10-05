@@ -83,7 +83,7 @@ Zarafa.plugins.speedreading.dialogs.SpeedReadingContentPanel = Ext.extend(Zarafa
 
 	/**
 	 *
-	 * @param {Ext.button} button to start the sprayReader
+	 * @param {Ext.button} button to stop the sprayReader
 	 */
 	stopSpeedReading : function(button) {
 		this.sprayReader.stop();
