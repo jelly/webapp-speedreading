@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE plugin SYSTEM "manifest.dtd">
+<plugin version="2">
+	<info>
+		<version>0.1</version>
+		<name>Speed reading</name>
+		<title>Speed reading</title>
+		<author>Jelle van der Waa</author>
+		<authorURL>http://www.vdwaa.nl</authorURL>
+		<description>Speed reading plugin for WebApp</description>
+	</info>
+	<config>
+		<configfile>config.php</configfile>
+	</config>
+	<components>
+		<component>
+			<info>
+				<name>spray</name>
+				<title>Spray</title>
+				<author>chaimpeck</author>
+				<authorURL>https://github.com/chaimpeck</authorURL>
+				<description>An open-source speed-reading application written in Javascript</description>
+			</info>
+			<files>
+				<client>
+					<clientfile load="debug">spray/spray-reader.js</clientfile>
+					<clientfile load="source">spray/spray-reader.js</clientfile>
+				</client>
+			</files>
+		</component>
+		<component>
+			<files>
+				<client>
+					<clientfile load="release">js/speedreading.js</clientfile>
+					<clientfile load="debug">js/speedreading-debug.js</clientfile>
+					<clientfile load="source">js/speedreading.js</clientfile>
+				</client>
+			</files>
+		</component>
+	</components>
+</plugin>
