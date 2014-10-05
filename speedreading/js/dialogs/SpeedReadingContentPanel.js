@@ -38,14 +38,16 @@ Zarafa.plugins.speedreading.dialogs.SpeedReadingContentPanel = Ext.extend(Zarafa
 				html: '<div id="spray_container"><div id="guide_top">――――――――――<span id="notch">ф</span>―――――――――――</div><div id="spray_result">&nbsp;</div><div id="guide_bottom">――――――――――――――――――――――</div></div>',
 				}
 			},{
-				// TODO: fix initial selection
 				xtype: 'combo',
 				name: 'Words per minute',
 				ref: 'wpm',
 				store: [100, 200, 300, 400, 500],
 				autoSelect: true,
 				triggerAction: 'all',
-				editable: false
+				mode: 'local',
+				editable: false,
+				value: 100 
+
 			},{
 				xtype: 'button',
 				text:  _('Start'),
