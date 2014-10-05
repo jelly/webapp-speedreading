@@ -46,7 +46,6 @@ Zarafa.plugins.speedreading.dialogs.SpeedReadingContentPanel = Ext.extend(Zarafa
 				  'font-size' : '32px!important'
 				}
 			},{
-				// FIXME: make selectable
 				xtype: 'combo',
 				name: 'Words per minute',
 				ref: 'wpm',
