@@ -20,6 +20,7 @@ Zarafa.plugins.speedreading.Speedreading = Ext.extend(Zarafa.core.Plugin, {
 
 	initPlugin : function()
 	{
+		this.registerInsertionPoint(/context\.mail\.(.*?)\.toolbar\.options/, this.showSpeedReadingFromPreviewButton, this);
 		this.registerInsertionPoint('previewpanel.toolbar.right', this.showSpeedReadingFromPreviewButton, this);
 
 		Zarafa.core.data.SharedComponentType.addProperty('plugin.speedreading.dialog.speedreadingwindow');
