@@ -28,22 +28,15 @@ Zarafa.plugins.speedreading.dialogs.SpeedReadingContentPanel = Ext.extend(Zarafa
 		Ext.applyIf(config, {
 			layout : 'form',
 			modal: true,
-			width: 300,
-			height: 300,
+			width: 600,
+			height: 200,
 			title : _('Speed Reading Window'),
 			xtype: 'speedreading.speedreadingwindow',
 			// TODO: implement real speedreading field, with bigger font and line
 			items: [{
-				xtype: 'displayfield',
-				id: 'spray_result',
-				ref: 'speedreader',
-				displayField : '<div id="spray_result">&nbsp;</div>',
-				scope: this,
-			 	style: {
-			          'font-size' : '32px!important'
-			        },
-				labelStyle: {
-				  'font-size' : '32px!important'
+				xtype: 'box',
+				autoEl : {
+				html: '<div id="spray_container"><div id="guide_top">――――――――――<span id="notch">ф</span>―――――――――――</div><div id="spray_result">&nbsp;</div><div id="guide_bottom">――――――――――――――――――――――</div></div>',
 				}
 			},{
 				xtype: 'combo',
