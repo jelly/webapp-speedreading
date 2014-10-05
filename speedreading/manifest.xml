@@ -35,7 +35,11 @@
 					<clientfile load="debug">js/speedreading-debug.js</clientfile>
 					<clientfile load="source">js/speedreading.js</clientfile>
 					<clientfile load="source">js/dialogs/SpeedReadingContentPanel.js</clientfile>
-				</client>
+	 			</client>
+                                <resources>                                                                                                                                                                                                                                                                                                          
+                                        <resourcefile load="release">resources/css/spray-style.css</resourcefile>                                                                                                                                                                                                                                          
+                                        <resourcefile load="source">resources/css/spray-style.css</resourcefile>                                                                                                                                                                                                                                    
+                                </resources>                                                                                                                                                                                                                                                                                                         
 			</files>
 		</component>
 	</components>
