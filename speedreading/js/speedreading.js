@@ -39,7 +39,7 @@ Zarafa.plugins.speedreading.Speedreading = Ext.extend(Zarafa.core.Plugin, {
 			xtype : 'button',
 			tooltip : _('Spreed reading'),
 			overflowText : _('Speed reading'),
-			iconCls : '',
+			iconCls : 'speedreading_icon',
 			handler : this.showSpeedReading,
 			scope : this,
 			plugins : ['zarafa.recordcomponentupdaterplugin'],

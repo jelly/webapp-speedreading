@@ -90,3 +90,8 @@
     }
 }
 
+.speedreading_icon {
+	background-image: url(../icons/speedreading.png);
+	background-repeat: no-repeat;
+	background-position: center;
+}
