@@ -24,7 +24,7 @@
 			<files>
 				<client>
 					<clientfile load="debug">spray/spray-reader.js</clientfile>
-					<clientfile load="source">spray/spray-reader.js</clientfile>
+					<clientfile load="release">spray/spray-reader.js</clientfile>
 				</client>
 			</files>
 		</component>
@@ -37,7 +37,8 @@
 					<clientfile load="source">js/dialogs/SpeedReadingContentPanel.js</clientfile>
 	 			</client>
                                 <resources>                                                                                                                                                                                                                                                                                                          
-					<resourcefile load="release">resources/css/spray-style.css</resourcefile> 
+					<resourcefile load="release">resources/css/speedreading.css</resourcefile> 
+					<resourcefile load="debug">resources/css/spray-style.css</resourcefile> 
                                         <resourcefile load="source">resources/css/spray-style.css</resourcefile>                                                                                                                                                                                                                                    
                                 </resources>                                                                                                                                                                                                                                                                                                         
 			</files>

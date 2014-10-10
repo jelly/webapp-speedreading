@@ -186,6 +186,7 @@
 		<copy todir="${target-folder}/${plugin-folder}">
 			<fileset dir=".">
 				<include name="resources/**/*.*"/>
+				<include name="spray/**/*.*"/>
 				<include name="php/**/*.php"/>
 				<include name="config.php"/>
 				<!-- exclude the ant script -->
