@@ -7,7 +7,7 @@ Ext.namespace('Zarafa.plugins.speedreading.dialogs');
  * The content panel which asks the user for his passphrase and verifies if it's correct.
  * @xtype smime.passphrasewindow
  */
-Zarafa.plugins.speedreading.dialogs.SpeedReadingContentPanel = Ext.extend(Zarafa.core.ui.ContentPanel, {
+Zarafa.plugins.speedreading.dialogs.SpeedReadingContentPanel = Ext.extend(Ext.Panel, {
 	/**
 	 * cfg {Ext.Record} record the email record
 	 */
@@ -26,25 +26,32 @@ Zarafa.plugins.speedreading.dialogs.SpeedReadingContentPanel = Ext.extend(Zarafa
 		config = config || {};
 
 		Ext.applyIf(config, {
-			layout : 'form',
 			modal: true,
 			width: 600,
 			height: 200,
-			title : _('Speed Reading Window'),
+			layout: {
+				type: 'vbox',
+				align: 'stretch'
+			},
+			border: false,
+			bodyStyle: 'padding: 5px; background-color: inherit;',
 			xtype: 'speedreading.speedreadingwindow',
 			items: [{
 				xtype: 'box',
 				autoEl : {
 				html: '<div id="spray_container"><div id="guide_top">――――――――――<span id="notch">ф</span>―――――――――――</div><div id="spray_result">&nbsp;</div><div id="guide_bottom">――――――――――――――――――――――</div></div>'
 				}
-			},{
+			}],
+			buttons: [{
 				xtype: 'combo',
 				name: 'Words per minute',
-				ref: 'wpm',
+				ref: '../wpm',
 				store: [100, 200, 300, 400, 500],
 				autoSelect: true,
 				triggerAction: 'all',
+				buttonAlign:'left',
 				mode: 'local',
+				width: 100,
 				editable: false,
 				value: 100 
 
@@ -52,11 +59,15 @@ Zarafa.plugins.speedreading.dialogs.SpeedReadingContentPanel = Ext.extend(Zarafa
 				xtype: 'button',
 				text:  _('Start'),
 				handler: this.startSpeedReading,
+				width: 100,
+				buttonAlign:'left',
 				scope: this
 			},{
 				xtype: 'button',
 				text:  _('Stop'),
 				handler: this.stopSpeedReading,
+				width: 100,
+				buttonAlign:'left',
 				scope: this
 			}]
 		});
