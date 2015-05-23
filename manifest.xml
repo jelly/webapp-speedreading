@@ -29,6 +29,21 @@
 			</files>
 		</component>
 		<component>
+			<info>
+				<name>jQuery</name>
+				<title>jQuery</title>
+				<author>jQuery Foundation, Inc. and other contributors</author>
+				<authorURL>http://jquery.com</authorURL>
+				<description>jQuery is a cross-platform JavaScript library designed to simplify the client-side scripting of HTML</description>
+			</info>
+			<files>
+				<client>
+					<clientfile load="debug">jquery/jquery-2.0.0.js</clientfile>
+					<clientfile load="release">jquery/jquery-2.0.0.min.js</clientfile>
+				</client>
+			</files>
+		</component>
+		<component>
 			<files>
 				<client>
 					<clientfile load="release">js/speedreading.js</clientfile>
