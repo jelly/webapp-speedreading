@@ -37,7 +37,7 @@ Zarafa.plugins.speedreading.Speedreading = Ext.extend(Zarafa.core.Plugin, {
 	{
 		return {
 			xtype : 'button',
-			tooltip : _('Spreed reading'),
+			tooltip : _('Speed reading'),
 			overflowText : _('Speed reading'),
 			iconCls : 'speedreading_icon',
 			handler : this.showSpeedReading,
