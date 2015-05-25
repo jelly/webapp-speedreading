@@ -9,9 +9,6 @@
 		<authorURL>http://www.vdwaa.nl</authorURL>
 		<description>Speed reading plugin for WebApp</description>
 	</info>
-	<config>
-		<configfile>config.php</configfile>
-	</config>
 	<components>
 		<component>
 			<info>
